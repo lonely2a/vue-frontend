@@ -195,12 +195,18 @@ const getPositionDesc = (position) => {
   return `手数: ${position.volume.toFixed(2)} | ${position.type.toUpperCase() === 'BUY' ? '买入' : '卖出'}`
 }
 
-// 获取品种图标
+// 获取品种图标（使用可靠的CDN图片）
 const getSymbolIcon = (symbol) => {
-  if (symbol.includes('BTC')) return 'https://img.yzcdn.cn/FiJDqK_8LbJvZLl7wF3xP3yXVH8_'
-  if (symbol.includes('ETH')) return 'https://img.yzcdn.cn/FnYqK_8LbJvZLl7wF3xP3yXVH8_'
-  if (symbol.includes('XAU')) return 'https://img.yzcdn.cn/FmYqK_8LbJvZLl7wF3xP3yXVH8_'
-  return 'https://img.yzcdn.cn/FpYqK_8LbJvZLl7wF3xP3yXVH8_'
+  // BTCUSD - 比特币图标
+  if (symbol.includes('BTC')) return 'https://cryptologos.cc/logos/bitcoin-btc-logo.png?v=029'
+  // ETHUSD - 以太坊图标
+  if (symbol.includes('ETH')) return 'https://cryptologos.cc/logos/ethereum-eth-logo.png?v=029'
+  // XAUUSD - 黄金图标
+  if (symbol.includes('XAU') || symbol.includes('GOLD')) return 'https://cdn-icons-png.flaticon.com/512/2534/2534287.png'
+  // 外汇 - 美元图标
+  if (symbol.includes('USD') || symbol.includes('FOREX')) return 'https://cdn-icons-png.flaticon.com/512/2953/2953363.png'
+  // 默认图标
+  return 'https://cdn-icons-png.flaticon.com/512/686/686589.png'
 }
 
 // 显示持仓详情
