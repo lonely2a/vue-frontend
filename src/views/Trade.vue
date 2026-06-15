@@ -41,7 +41,7 @@
         <label class="form-label">手数</label>
         <van-field
           v-model="formData.volume"
-          placeholder="0.50"
+          placeholder="0.050"
           type="number"
           :rules="[
             { required: true, message: '请输入手数' },
@@ -147,7 +147,7 @@ const userStore = useUserStore()
 const formData = ref({
   symbol: 'BTCUSD',
   type: 'BUY',
-  volume: 0.50,
+  volume: 0.050,
   sl_price: null,
   tp_price: null,
   check_ema_strategy: true,
