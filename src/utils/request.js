@@ -3,7 +3,7 @@ import { showToast } from 'vant'
 
 // 创建axios实例
 const service = axios.create({
-  baseURL: '/api', // Vite代理会转发到后端
+  baseURL: import.meta.env.VITE_API_BASE_URL || '/api', // 使用环境变量或默认代理
   timeout: 30000,
   withCredentials: true, // 允许发送Cookie
 })
