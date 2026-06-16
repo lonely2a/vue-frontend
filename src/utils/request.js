@@ -3,7 +3,7 @@ import { showToast } from 'vant'
 
 // 创建axios实例
 const service = axios.create({
-  baseURL: import.meta.env.VITE_API_BASE_URL || '/api', // 使用环境变量或默认代理
+  baseURL: 'http://localhost:8000/api', // 直接指定后端API地址（包含/api前缀）
   timeout: 30000,
   withCredentials: true, // 允许发送Cookie
 })
