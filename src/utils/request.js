@@ -2,8 +2,9 @@ import axios from 'axios'
 import { showToast } from 'vant'
 
 // 创建axios实例
+// 使用相对路径，自动适配当前页面的主机和端口
 const service = axios.create({
-  baseURL: 'http://localhost:8000/api', // 直接指定后端API地址（包含/api前缀）
+  baseURL: '/api', // 相对路径，会自动使用当前页面的协议、主机和端口
   timeout: 30000,
   withCredentials: true, // 允许发送Cookie
 })
