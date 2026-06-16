@@ -219,7 +219,7 @@ const onSubmit = async () => {
       })
       return
     }
-    
+    /*
     if (!hasTpPrice && formData.value.enable_trailing_stop) {
       // 提示用户将使用移动止损来平仓
       showToast({
@@ -227,7 +227,7 @@ const onSubmit = async () => {
         message: '未设置止盈，将依赖移动止损策略自动平仓',
         duration: 2000,
       })
-    }
+    }*/
   }
   
   try {
